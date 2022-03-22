@@ -40,7 +40,7 @@ then
 fi
 
 unzip softether-systemd.zip
-rm softether-systemd.zip
+#rm softether-systemd.zip
 
 sudo install -m 755 vpnserver-env /usr/local/softether/vpnserver
 sudo install -m 755 post-start.sh /usr/local/softether/vpnserver
