@@ -13,8 +13,8 @@ sudo systemctl disable isc-dhcp-server6
 
 sudo cp -p /etc/default/isc-dhcp-server /etc/default/isc-dhcp-server_bak
 sudo cat /etc/default/isc-dhcp-server_bak \
-| sed 's,INTERFACESv4="",INTERFACESv4="tap_se0",' \
-| sed 'INTERFACESv6="",INTERFACESv6="tap_se0",' \
+| sudo sed 's,INTERFACESv4="",INTERFACESv4="tap_se0",' \
+| sudo sed 'INTERFACESv6="",INTERFACESv6="tap_se0",' \
 > /etc/default/isc-dhcp-server
 
 cat << \! >> /etc/dhcp/dhcpd.conf
