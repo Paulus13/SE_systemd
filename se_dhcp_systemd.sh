@@ -54,8 +54,5 @@ sudo systemctl daemon-reload
 sudo systemctl start softether-vpnserver.service
 sudo systemctl start isc-dhcp-server.service
 
-sudo systemctl status isc-dhcp-server.service
-sudo systemctl status softether-vpnserver.service
-
 sudo systemctl enable isc-dhcp-server.service
 sudo systemctl enable softether-vpnserver.service
