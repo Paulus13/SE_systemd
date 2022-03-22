@@ -34,7 +34,11 @@ subnet 10.5.1.0 netmask 255.255.255.0 {
 sudo systemctl stop isc-dhcp-server.service
 sudo vpnserver stop
 
-wget https://github.com/Paulus13/SE_systemd/raw/main/softether-systemd.zip
+if [ ! -e softether-systemd.zip ]
+then
+	wget https://github.com/Paulus13/SE_systemd/raw/main/softether-systemd.zip
+fi
+
 unzip softether-systemd.zip
 rm softether-systemd.zip
 
