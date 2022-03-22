@@ -1,5 +1,8 @@
 #!/bin/bash
 
+#	Script for install Softether
+#	Works with Ubuntu 18.04 and higher
+
 sudo apt -y install cmake gcc g++ make libncurses5-dev libssl-dev libsodium-dev libreadline-dev zlib1g-dev 
 wget softether-src.tar.gz https://github.com/SoftEtherVPN/SoftEtherVPN_Stable/releases/download/v4.38-9760-rtm/softether-src-v4.38-9760-rtm.tar.gz
 tar -xvf softether-src-v4.38-9760-rtm.tar.gz
