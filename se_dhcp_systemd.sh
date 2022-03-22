@@ -1,5 +1,9 @@
 #!/bin/bash
 
+#	Script for install DHCP and configure autostart for Softether and DHCP
+#	Works with Ubuntu 18.04 and higher
+
+
 sudo apt -y install isc-dhcp-server unzip
  
 sudo systemctl stop isc-dhcp-server
