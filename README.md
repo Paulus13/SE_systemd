@@ -16,6 +16,7 @@ RU
    chmod +x *.sh
    ./se_inst.sh
    Данный скрипт скачает и соберет из исходников последнюю на данный момент (март 2022) стабильную версию Softether https://github.com/SoftEtherVPN/SoftEtherVPN_Stable
+   
    Пути установки отличаются от дефолтных, если нужно оставить дефолтные пути - закомментируйте в скрипте строки
       
       cp -p Makefile Makefile_bak
