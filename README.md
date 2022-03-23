@@ -73,3 +73,77 @@ iptables -A FORWARD -o tap_se0 -j ACCEPT;
 
 Здесь так же разрешен входящий трафик по управляющим портам и портам для работы IPSec.
 Интерфейс ens3 в строке MASQUERADE указан для примера, его нужно поменять на актуальный.
+
+EN
+
+This set of scripts and configs is designed to install Softether (www.softether.org) and service settings for automatic startup.
+The scripts have been tested under Ubuntu 20.04, for other Linux you need to edit this scripts.
+
+How to use:
+1. To start, update the existing packages
+
+sudo apt-get update && sudo apt-get upgrade -y
+2. Install GIT
+
+sudo apt install git
+3. Clone the repo
+
+git clone https://github.com/Paulus13/SE_systemd.git
+4. cd SE_systemd
+
+chmod +x *.sh
+
+./se_inst.sh
+
+This script will download and compile from the source codes the latest stable version of Softether at the moment (March 2022). https://github.com/SoftEtherVPN/SoftEtherVPN_Stable
+
+The script also turn on IP forwarding at the OS level.
+
+The installation paths are different from the default ones, if you need the default paths, comment out the lines in the script
+
+cp -p Makefile Makefile_bak
+cat Makefile_bak \
+| sed 's,/usr/bin/,/usr/local/bin/,' \
+| sed 's,/usr/vpnserver/,/usr/local/softether/vpnserver/,' \
+| sed 's,/usr/vpnbridge/,/usr/local/softether/vpnbridge/,' \
+| sed 's,/usr/vpnclient/,/usr/local/softether/vpnclient/,' \
+| sed 's,/usr/vpncmd/,/usr/local/softether/vpncmd/,' \
+> Makefile
+5. Make initial Softether settings using VPN Server Manager (you can download it here https://www.softether-download.com/en.aspx?product=softether )
+
+You need to set a password (it will be requested at the first login) and create a bridge for the Default hub, call it se0
+
+Local Bridge Settings - Virtual Hub - Default - Bridge with New Tap Device - se0 - Create Local Bridge.
+
+At the same time, the tap_se0 network interface will appear on the OS.
+
+6. ./se_dhcp_systemd.sh
+
+This script will install DHCP, as well as configure DHCP and Softether as services
+
+A little bit about setting up iptables
+
+In order for the VPN to forward traffic outwards, you need to add lines to iptables:
+
+iptables -A INPUT -p tcp --dport 443 -j ACCEPT;
+
+iptables -A INPUT -p tcp --dport 5555 -j ACCEPT;
+
+iptables -A INPUT -p udp --dport 500 -j ACCEPT;
+
+iptables -A INPUT -p udp --dport 1701 -j ACCEPT;
+
+iptables -A INPUT -p udp --dport 4500 -j ACCEPT;
+
+iptables -A INPUT -p 50 -j ACCEPT;
+
+iptables -A INPUT -p 51 -j ACCEPT;
+
+iptables -t nat -A POSTROUTING -o ens3 -j MASQUERADE;
+
+iptables -A FORWARD -i tap_se0 -j ACCEPT;
+
+iptables -A FORWARD -o tap_se0 -j ACCEPT;
+
+Incoming traffic on control ports and ports for IPsec operation is also allowed here.
+The ens3 interface in the MASQUERADE line is specified for example, it needs to be changed to the current one.
