@@ -36,7 +36,7 @@ RU
 	      | sed 's,/usr/vpnclient/,/usr/local/softether/vpnclient/,' \
 	      | sed 's,/usr/vpncmd/,/usr/local/softether/vpncmd/,' \
 	      > Makefile
-5. Сделать первычные настройки Softether используя VPN Server Manager (скачать можно здесь https://www.softether-download.com/en.aspx?product=softether)
+5. Сделать первичные настройки Softether используя VPN Server Manager (скачать можно здесь https://www.softether-download.com/en.aspx?product=softether)
 
    Нужно установить пароль (будет запрошен при первом входе) и создать бридж для хаба Default, назвать его se0
    
