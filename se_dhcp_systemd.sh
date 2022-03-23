@@ -12,12 +12,12 @@ sudo systemctl disable isc-dhcp-server
 sudo systemctl disable isc-dhcp-server6
 
 sudo cp -p /etc/default/isc-dhcp-server /etc/default/isc-dhcp-server_bak
-sudo cat /etc/default/isc-dhcp-server_bak \
-| sudo sed 's,INTERFACESv4="",INTERFACESv4="tap_se0",' \
-| sudo sed 'INTERFACESv6="",INTERFACESv6="tap_se0",' \
-> /etc/default/isc-dhcp-server
+sudo (cat /etc/default/isc-dhcp-server_bak \
+| sed 's,INTERFACESv4="",INTERFACESv4="tap_se0",' \
+| sed 's,INTERFACESv6="",INTERFACESv6="tap_se0",' \
+> /etc/default/isc-dhcp-server)
 
-cat << \! >> /etc/dhcp/dhcpd.conf
+sudo cat << \! >> /etc/dhcp/dhcpd.conf
 
 subnet 10.5.1.0 netmask 255.255.255.0 {
   range 10.5.1.50 10.5.1.230;
