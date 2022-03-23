@@ -2,8 +2,9 @@
 
 RU
 
-Данный набор скриптов и конфигов предназначен для установки Softether (www.softether.org) и настройки сервисв для автоматического запуска.
-Работа скриптов проверена под Ubuntu 20.04, для других Линуксов скрипты нужно править
+Данный набор скриптов и конфигов предназначен для установки Softether (www.softether.org) и настройки сервисов для автоматического запуска.
+Работа скриптов проверена под Ubuntu 20.04, для других Линуксов скрипты нужно править.
+Исполнять скрипты можно из под любого пользователя с правами sudo.
 
 Как пользоваться:
 1. Для начала обновить имеющиеся пакеты
@@ -80,6 +81,7 @@ EN
 
 This set of scripts and configs is designed to install Softether (www.softether.org) and service settings for automatic startup.
 The scripts have been tested under Ubuntu 20.04, for other Linux you need to edit this scripts.
+Scripts can be executed from under any user with sudo rights.
 
 How to use:
 1. To start, update the existing packages
