@@ -50,7 +50,7 @@ RU
    
 7. Теперь можно настраивать VPN под свои нужды.
    
-Немного о настройке iptables
+Немного о настройке iptables.
 
 Чтобы VPN мог форвардить трафик наружу нужно добавить строки в iptables:
 
@@ -131,7 +131,7 @@ cat Makefile_bak \
 
 7. Now you can configure VPN to suit your needs.
 
-A little bit about setting up iptables
+A little bit about setting up iptables.
 
 In order for the VPN to forward traffic outwards, you need to add lines to iptables:
 
