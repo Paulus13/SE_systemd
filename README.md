@@ -47,6 +47,8 @@ RU
 
    Данный скрипт установит DHCP, а так же сконфигурирует DHCP и Softether как службы
    
+7. Теперь можно настраивать VPN под свои нужды.
+   
 Немного о настройке iptables
 
 Чтобы VPN мог форвардить трафик наружу нужно добавить строки в iptables:
@@ -121,6 +123,8 @@ At the same time, the tap_se0 network interface will appear on the OS.
 
 This script will install DHCP, as well as configure DHCP and Softether as services
 
+7. Now you can configure VPN to suit your needs.
+
 A little bit about setting up iptables
 
 In order for the VPN to forward traffic outwards, you need to add lines to iptables:
@@ -145,5 +149,5 @@ iptables -A FORWARD -i tap_se0 -j ACCEPT;
 
 iptables -A FORWARD -o tap_se0 -j ACCEPT;
 
-Incoming traffic on control ports and ports for IPsec operation is also allowed here.
+Incoming traffic on control ports and ports for IPsec protocol is also allowed here.
 The ens3 interface in the MASQUERADE line is specified for example, it needs to be changed to the current one.
