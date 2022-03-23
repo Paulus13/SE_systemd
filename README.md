@@ -114,7 +114,7 @@ cat Makefile_bak \
 | sed 's,/usr/vpnserver/,/usr/local/softether/vpnserver/,' \
 | sed 's,/usr/vpnbridge/,/usr/local/softether/vpnbridge/,' \
 | sed 's,/usr/vpnclient/,/usr/local/softether/vpnclient/,' \
-| sed 's,/usr/vpncmd/,/usr/local/softether/vpncmd/,' \
+| sed 's,/usr/vpncmd/,/usr/local/softether/vpncmd/,'\
 > Makefile
 
 5. Make initial Softether settings using VPN Server Manager (you can download it here https://www.softether-download.com/en.aspx?product=softether )
