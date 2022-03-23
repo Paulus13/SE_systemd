@@ -11,25 +11,18 @@ sudo systemctl stop isc-dhcp-server6
 sudo systemctl disable isc-dhcp-server
 sudo systemctl disable isc-dhcp-server6
 
-sudo cp -p /etc/default/isc-dhcp-server /etc/default/isc-dhcp-server_bak
-sudo (cat /etc/default/isc-dhcp-server_bak \
-| sed 's,INTERFACESv4="",INTERFACESv4="tap_se0",' \
-| sed 's,INTERFACESv6="",INTERFACESv6="tap_se0",' \
-> /etc/default/isc-dhcp-server)
+if [ ! -e dhcp_conf.zip ]
+then
+	wget https://github.com/Paulus13/SE_systemd/raw/main/dhcp_conf.zip
+fi
 
-sudo cat << \! >> /etc/dhcp/dhcpd.conf
+unzip dhcp_conf.zip
 
-subnet 10.5.1.0 netmask 255.255.255.0 {
-  range 10.5.1.50 10.5.1.230;
-  option domain-name-servers 1.1.1.1;
-  option domain-name "my-host.example.org";
-  option subnet-mask 255.255.255.0;
-  option routers 10.5.1.1;
-  default-lease-time 600;
-  max-lease-time 7200;
-}
+sudo cp /etc/default/isc-dhcp-server /etc/default/isc-dhcp-server.orig
+sudo cp isc-dhcp-server /etc/default/
 
-!
+sudo cp /etc/dhcp/dhcpd.conf /etc/dhcp/dhcpd.conf.orig
+sudo cp dhcpd.conf /etc/dhcp/
 
 sudo systemctl stop isc-dhcp-server.service
 sudo vpnserver stop
