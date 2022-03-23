@@ -13,9 +13,8 @@ RU
 
    sudo apt install git
 3. Клонировать репо
-
-4. git clone https://github.com/Paulus13/SE_systemd.git
-5. cd SE_systemd
+   git clone https://github.com/Paulus13/SE_systemd.git
+4. cd SE_systemd
    chmod +x *.sh
    ./se_inst.sh
    
