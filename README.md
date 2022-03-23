@@ -44,5 +44,5 @@ iptables -t nat -A POSTROUTING -o ens3 -j MASQUERADE;
 iptables -A FORWARD -i tap_se0 -j ACCEPT;
 iptables -A FORWARD -o tap_se0 -j ACCEPT;
 
-Здесь так же разрешен входящий трафик по управляющим портам и портам для работы IPSec
-Интерфейс ens3 в строке MASQUERADE указан для примера, его нужно поменять на актуальный
+Здесь так же разрешен входящий трафик по управляющим портам и портам для работы IPSec.
+Интерфейс ens3 в строке MASQUERADE указан для примера, его нужно поменять на актуальный.
