@@ -52,7 +52,7 @@ RU
    
 Немного о настройке iptables.
 
-Чтобы VPN мог форвардить трафик наружу нужно добавить строки в iptables:
+Чтобы получить доступ к VPN а так же чтобы он мог форвардить трафик наружу нужно добавить строки в iptables:
 
 iptables -A INPUT -p tcp --dport 443 -j ACCEPT;
 
@@ -133,7 +133,7 @@ cat Makefile_bak \
 
 A little bit about setting up iptables.
 
-In order for the VPN to forward traffic outwards, you need to add lines to iptables:
+To get access to the VPN and also so that it can forward traffic outside, you need to add some lines to iptables:
 
 iptables -A INPUT -p tcp --dport 443 -j ACCEPT;
 
