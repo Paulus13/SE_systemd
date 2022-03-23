@@ -39,23 +39,14 @@ RU
 Чтобы VPN мог форвардить трафик наружу нужно добавить строки в iptables:
 
 iptables -A INPUT -p tcp --dport 443 -j ACCEPT;
-
 iptables -A INPUT -p tcp --dport 5555 -j ACCEPT;
-
 iptables -A INPUT -p udp --dport 500 -j ACCEPT;
-
 iptables -A INPUT -p udp --dport 1701 -j ACCEPT;
-
 iptables -A INPUT -p udp --dport 4500 -j ACCEPT;
-
 iptables -A INPUT -p 50 -j ACCEPT;
-
 iptables -A INPUT -p 51 -j ACCEPT;
-
 iptables -t nat -A POSTROUTING -o ens3 -j MASQUERADE;
-
 iptables -A FORWARD -i tap_se0 -j ACCEPT;
-
 iptables -A FORWARD -o tap_se0 -j ACCEPT;
 
 Здесь так же разрешен входящий трафик по управляющим портам и портам для работы IPSec.
