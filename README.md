@@ -88,9 +88,11 @@ sudo apt-get update && sudo apt-get upgrade -y
 2. Install GIT
 
 sudo apt install git
+
 3. Clone the repo
 
 git clone https://github.com/Paulus13/SE_systemd.git
+
 4. cd SE_systemd
 
 chmod +x *.sh
@@ -111,6 +113,7 @@ cat Makefile_bak \
 | sed 's,/usr/vpnclient/,/usr/local/softether/vpnclient/,' \
 | sed 's,/usr/vpncmd/,/usr/local/softether/vpncmd/,' \
 > Makefile
+
 5. Make initial Softether settings using VPN Server Manager (you can download it here https://www.softether-download.com/en.aspx?product=softether )
 
 You need to set a password (it will be requested at the first login) and create a bridge for the Default hub, call it se0
