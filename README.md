@@ -2,7 +2,7 @@
 
 RU
 
-Данный набор скриптов и конфигов предназначен для установки Softether (www.softether.org) и настройки сервисов для автоматического запуска.
+Данный набор скриптов и конфигов предназначен для установки Softether VPN (www.softether.org) и настройки сервисов для автоматического запуска.
 Работа скриптов проверена под Ubuntu 20.04, для других Линуксов скрипты нужно править.
 Исполнять скрипты можно из под любого пользователя с правами sudo.
 
@@ -79,7 +79,7 @@ iptables -A FORWARD -o tap_se0 -j ACCEPT;
 
 EN
 
-This set of scripts and configs is designed to install Softether (www.softether.org) and service settings for automatic startup.
+This set of scripts and configs is designed to install Softether VPN (www.softether.org) and service settings for automatic startup.
 The scripts have been tested under Ubuntu 20.04, for other Linux you need to edit this scripts.
 Scripts can be executed from under any user with sudo rights.
 
