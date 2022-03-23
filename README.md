@@ -108,8 +108,7 @@ cat Makefile_bak \
 | sed 's,/usr/vpnbridge/,/usr/local/softether/vpnbridge/,' \
 | sed 's,/usr/vpnclient/,/usr/local/softether/vpnclient/,' \
 | sed 's,/usr/vpncmd/,/usr/local/softether/vpncmd/,' \
-
- > Makefile
+> Makefile
 5. Make initial Softether settings using VPN Server Manager (you can download it here https://www.softether-download.com/en.aspx?product=softether )
 
 You need to set a password (it will be requested at the first login) and create a bridge for the Default hub, call it se0
