@@ -7,15 +7,14 @@ RU
 
 Как пользоваться:
 1. Для начала обновить имеющиеся пакеты
-2. 
+
    sudo apt-get update && sudo apt-get upgrade -y
 2. Установить GIT
-3. 
+
    sudo apt install git
 3. Клонировать репо
 
 4. git clone https://github.com/Paulus13/SE_systemd.git
-   
 5. cd SE_systemd
    chmod +x *.sh
    ./se_inst.sh
@@ -33,15 +32,20 @@ RU
 	      | sed 's,/usr/vpncmd/,/usr/local/softether/vpncmd/,' \
 	      > Makefile
 5. Сделать первычные настройки Softether используя VPN Server Manager (скачать можно здесь https://www.softether-download.com/en.aspx?product=softether)
-6. 
+
    Нужно установить пароль (будет запрошен при первом входе) и создать бридж для хаба Default, назвать его se0
    
    Local Bridge Settings - Virtual Hub - Default - Bridge with New Tap Device - se0 - Create Local Bridge.
    
    При этом на ОС появится сетевой интерфес tap_se0.
+   
 6. ./se_dhcp_systemd.sh
+
    Данный скрипт установит DHCP, а так же сконфигурирует DHCP и Softether как службы
    
+   
+Немного о настройке iptables
+
 Чтобы VPN мог форвардить трафик наружу нужно добавить строки в iptables:
 
 iptables -A INPUT -p tcp --dport 443 -j ACCEPT;
