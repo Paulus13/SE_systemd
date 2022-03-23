@@ -84,22 +84,23 @@ The scripts have been tested under Ubuntu 20.04, for other Linux you need to edi
 How to use:
 1. To start, update the existing packages
 
-sudo apt-get update && sudo apt-get upgrade -y
+    sudo apt-get update && sudo apt-get upgrade -y
+    
 2. Install GIT
 
-sudo apt install git
+   sudo apt install git
 
 3. Clone the repo
 
-git clone https://github.com/Paulus13/SE_systemd.git
+   git clone https://github.com/Paulus13/SE_systemd.git
 
 4. cd SE_systemd
 
-chmod +x *.sh
+   chmod +x *.sh
 
-./se_inst.sh
+   ./se_inst.sh
 
-This script will download and compile from the source codes the latest stable version of Softether at the moment (March 2022). https://github.com/SoftEtherVPN/SoftEtherVPN_Stable
+   This script will download and compile from the source codes the latest stable version of Softether at the moment (March 2022).    https://github.com/SoftEtherVPN/SoftEtherVPN_Stable
 
 The script also turn on IP forwarding at the OS level.
 
@@ -116,15 +117,15 @@ cat Makefile_bak \
 
 5. Make initial Softether settings using VPN Server Manager (you can download it here https://www.softether-download.com/en.aspx?product=softether )
 
-You need to set a password (it will be requested at the first login) and create a bridge for the Default hub, call it se0
+  You need to set a password (it will be requested at the first login) and create a bridge for the Default hub, call it se0
 
-Local Bridge Settings - Virtual Hub - Default - Bridge with New Tap Device - se0 - Create Local Bridge.
+  Local Bridge Settings - Virtual Hub - Default - Bridge with New Tap Device - se0 - Create Local Bridge.
 
-At the same time, the tap_se0 network interface will appear on the OS.
+  At the same time, the tap_se0 network interface will appear on the OS.
 
 6. ./se_dhcp_systemd.sh
 
-This script will install DHCP, as well as configure DHCP and Softether as services
+   This script will install DHCP, as well as configure DHCP and Softether as services
 
 7. Now you can configure VPN to suit your needs.
 
