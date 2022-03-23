@@ -13,9 +13,12 @@ RU
 
    sudo apt install git
 3. Клонировать репо
+
    git clone https://github.com/Paulus13/SE_systemd.git
 4. cd SE_systemd
+
    chmod +x *.sh
+   
    ./se_inst.sh
    
    Данный скрипт скачает и соберет из исходников последнюю на данный момент (март 2022) стабильную версию Softether https://github.com/SoftEtherVPN/SoftEtherVPN_Stable
