@@ -12,7 +12,7 @@ chmod +x *.sh
 
 ./se_inst.sh
    
-Make initial Softether settings using VPN Server Manager (you can download it here https://www.softether-download.com/en.aspx?product=softether ). You need to set a password (it will be requested at the first login) and create a bridge for the Default hub, call it se0. 
+Make initial Softether settings using VPN Server Manager (https://www.softether-download.com/en.aspx?product=softether ). Set a password (it will be requested at the first login) and create a bridge for the Default hub, call it se0. 
 
 Local Bridge Settings - Virtual Hub - Default - Bridge with New Tap Device - se0 - Create Local Bridge.
 
