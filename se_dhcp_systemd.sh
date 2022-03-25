@@ -13,7 +13,7 @@ sudo systemctl disable isc-dhcp-server6
 
 if [ ! -e dhcp_conf.zip ]
 then
-	wget https://github.com/Paulus13/SE_systemd/raw/main/dhcp_conf.zip
+	wget https://github.com/Paulus13/se_install/raw/main/dhcp_conf.zip
 fi
 
 unzip dhcp_conf.zip
@@ -29,7 +29,7 @@ sudo vpnserver stop
 
 if [ ! -e softether-systemd.zip ]
 then
-	wget https://github.com/Paulus13/SE_systemd/raw/main/softether-systemd.zip
+	wget https://github.com/Paulus13/se_install/raw/main/softether-systemd.zip
 fi
 
 unzip softether-systemd.zip
