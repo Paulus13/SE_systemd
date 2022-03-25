@@ -3,6 +3,11 @@
 #	Script for install Softether
 #	Works with Ubuntu 18.04 and higher
 
+if [ "$EUID" -ne 0 ]
+  then echo "Please run as root"
+  exit
+fi
+
 NET_FORWARD="net.ipv4.ip_forward=1"
 sudo sysctl -w  ${NET_FORWARD}
 sudo sed -i "s,#${NET_FORWARD},${NET_FORWARD}," /etc/sysctl.conf
