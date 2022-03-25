@@ -4,9 +4,9 @@ Made for personal use.
 The instruction is as short as possible. 
 Configure the firewall yourself. 
 
-git clone https://github.com/Paulus13/SE_systemd.git
+git clone https://github.com/Paulus13/se_install.git
 
-cd SE_systemd
+cd se_install
 
 chmod +x *.sh
 
