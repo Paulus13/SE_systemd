@@ -1,4 +1,4 @@
-# SE_systemd
+# se_install
 
 Made for personal use. 
 The instruction is as short as possible. 
