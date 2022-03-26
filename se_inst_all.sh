@@ -84,4 +84,18 @@ sudo systemctl start isc-dhcp-server.service
 sudo systemctl enable isc-dhcp-server.service
 sudo systemctl enable softether-vpnserver.service
 
+read -p "Install and configure fail2ban? [Y/n]: " f2b
+if [ -z $f2b ]
+then
+  f2b='Y'
+fi
+
+until [[ "$f2b" =~ ^[yYnN]*$ ]]; do
+	echo "$f2b: invalid selection."
+	read -p "Install and configure fail2ban? [Y/n]: " f2b
+done
+			
+if [[ "$f2b" =~ ^[yY]$ ]]; then
+	sudo f2b_inst.sh
+fi
 
