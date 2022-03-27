@@ -15,3 +15,5 @@ sed -i "s,//Unattended-Upgrade::Automatic-Reboot-WithUsers \"true\";,Unattended-
 sed -i "s,//Unattended-Upgrade::Automatic-Reboot-Time \"02:00\";,Unattended-Upgrade::Automatic-Reboot-Time \"02:00\";," /etc/apt/apt.conf.d/50unattended-upgrades
 
 dpkg-reconfigure -plow unattended-upgrades
+
+systemctl restart unattended-upgrades.service
