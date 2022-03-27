@@ -90,12 +90,21 @@ then
   f2b='Y'
 fi
 
-until [[ "$f2b" =~ ^[yYnN]*$ ]]; do
-	echo "$f2b: invalid selection."
-	read -p "Install and configure fail2ban? [Y/n]: " f2b
-done
+#until [[ "$f2b" =~ ^[yYnN]*$ ]]; do
+#	echo "$f2b: invalid selection."
+#	read -p "Install and configure fail2ban? [Y/n]: " f2b
+#done
 			
 if [[ "$f2b" =~ ^[yY]$ ]]; then
 	sudo f2b_inst.sh
 fi
 
+read -p "Install and configure autoupdate? [Y/n]: " upd
+if [ -z $upd ]
+then
+  upd='Y'
+fi
+
+if [[ "$upd" =~ ^[yY]$ ]]; then
+	sudo upd_inst.sh
+fi
