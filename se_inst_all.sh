@@ -29,10 +29,10 @@ sed -i 's,/usr/vpncmd/,/usr/local/softether/vpncmd/,' Makefile
 sudo make install
 sudo vpnserver start
 
-read -p "Enter the password for SoftetherVPN ([ENTER] set to default: VPN-8888 ): " VPN_PASSWORD
+read -p "Enter the password for SoftetherVPN ([ENTER] set to default: Vpn-88$$ ): " VPN_PASSWORD
 if [ -z $VPN_PASSWORD ]
 then
-  VPN_PASSWORD='VPN-8888'
+  VPN_PASSWORD='Vpn-88$$'
 fi
 
 sudo vpncmd 127.0.0.1:5555 /SERVER /CMD ServerPasswordSet $VPN_PASSWORD
