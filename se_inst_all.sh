@@ -96,7 +96,7 @@ fi
 #done
 			
 if [[ "$f2b" =~ ^[yY]$ ]]; then
-	sudo f2b_inst.sh
+	sudo ./f2b_inst.sh
 fi
 
 read -p "Install and configure autoupdate? [Y/n]: " upd
@@ -106,5 +106,5 @@ then
 fi
 
 if [[ "$upd" =~ ^[yY]$ ]]; then
-	sudo upd_inst.sh
+	sudo ./upd_inst.sh
 fi
